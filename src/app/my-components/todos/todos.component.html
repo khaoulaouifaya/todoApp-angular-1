@@ -1,0 +1,17 @@
+<p>todos Component here !</p>
+<br>
+<form (submit)="addTodo()">
+    <input 
+        type="text"
+        placeholder="Add description"
+        name="description"
+        [(ngModel)]="description"
+    />
+    <button type="submit">Add task</button>
+</form>
+<br>
+<div *ngFor="let todo of todosList; let i=index;">
+    <p>task: {{i+1}}, description: {{todo.description}} ,completed: {{todo.completed}} 
+        <button (click)="taskDone(i)">Change status</button>
+        <button (click)="remove(i)">Delete</button></p>
+</div>
